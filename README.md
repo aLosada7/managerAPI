@@ -23,3 +23,10 @@ MAX_FILE_UPLOAD=1000000
 
 ## Postman Collection
 https://www.getpostman.com/collections/e84f50e84320951b601d
+
+## Seeder
+There is a seeder included useful to add and remove data from the database using line commands. Use the following commands to add and remove data respectively.
+```
+node seeder -i
+node seeder -d
+``` 
