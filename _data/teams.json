@@ -1,0 +1,46 @@
+[
+	{
+		"_id": "5d713995b721c3bb38c1f5d0",
+		"user": "5d7a514b5d2c12c7449be045",
+		"name": "Stinson Rules!",
+		"budget": 100000000,
+		"country": "Spain",
+		"competition": ["sp1", "champions"],
+		"arenaName": "Stinsons",
+		"arenaSize": 4000,
+		"fans": 4000
+	},
+	{
+		"_id": "5d713a66ec8f2b88b8f830b8",
+		"user": "5d7a514b5d2c12c7449be046",
+		"name": "Swedish House Mafia",
+		"budget": 100000000,
+		"country": "Spain",
+		"competition": ["sp1"],
+		"arenaName": "The Swedish House Mafia Arena",
+		"arenaSize": 4000,
+		"fans": 4000
+	},
+	{
+		"_id": "5d725a037b292f5f8ceff787",
+		"user": "5c8a1d5b0190b214360dc031",
+		"name": "Let's make it happen",
+		"budget": 100000000,
+		"country": "Italy",
+		"competition": ["it1", "champions"],
+		"arenaName": "One, Two, Three",
+		"arenaSize": 4000,
+		"fans": 4000
+	},
+	{
+		"_id": "5d725a1b7b292f5f8ceff788",
+		"user": "5c8a1d5b0190b214360dc032",
+		"name": "The Beatles",
+		"budget": 100000000,
+		"country": "Spain",
+		"competition": ["sp1", "champions"],
+		"arenaName": "The Beatles Arena",
+		"arenaSize": 4000,
+		"fans": 4000
+	}
+]
