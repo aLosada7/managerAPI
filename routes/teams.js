@@ -15,6 +15,8 @@ const advancedResults = require('../middleware/advancedResults');
 
 const router = express.Router();
 
+const { protect, authorize } = require('../middleware/auth');
+
 // Include other resource routers
 const playerRouter = require('./players');
 
@@ -23,17 +25,17 @@ router.use('/:teamId/players', playerRouter);
 
 router
     .route('/:id/photo')
-    .put(teamPhotoUpload);
+    .put(protect, authorize('user', 'admin'), teamPhotoUpload);
  
 router
     .route('/')
     .get(advancedResults(Team, 'players'), getTeams)
-    .post(createTeam);
+    .post(protect, authorize('user', 'admin'), createTeam);
 
 router
     .route('/:id')
     .get(getTeam)
-    .put(updateTeam)
-    .delete(deleteTeam);
+    .put(protect, authorize('user', 'admin'), updateTeam)
+    .delete(protect, authorize('user', 'admin'), deleteTeam);
 
 module.exports = router;

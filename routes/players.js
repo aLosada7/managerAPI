@@ -11,17 +11,19 @@ const Player = require('../models/Player');
 const advancedResults = require('../middleware/advancedResults');
 
 const router = express.Router({ mergeParams: true });
+
+const { protect, authorize } = require('../middleware/auth');
  
 router.route('/')
     .get(advancedResults(Player, {
         path: 'team',
         select: 'name position'
     }), getPlayers)
-    .post(addPlayer);
+    .post(protect, authorize('user', 'admin'), addPlayer);
 
 router.route('/:id')
     .get(getPlayer)
-    .put(updatePlayer)
-    .delete(deletePlayer);
+    .put(protect, authorize('user', 'admin'), updatePlayer)
+    .delete(protect, authorize('user', 'admin'), deletePlayer);
 
 module.exports = router;

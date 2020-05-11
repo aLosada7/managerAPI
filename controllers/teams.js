@@ -30,6 +30,9 @@ exports.getTeam = asyncHandler(async (req, res, next) => {
 // @route POST /api/v1/teams
 // @access Private
 exports.createTeam = asyncHandler(async (req, res, next) => {
+    // Add user to req body
+    req.body.user = req.user.id
+
     const team = await Team.create(req.body);
 
     res.status(200).json({ 
@@ -42,14 +45,22 @@ exports.createTeam = asyncHandler(async (req, res, next) => {
 // @route UPDATE /api/v1/teams/:id
 // @access Private
 exports.updateTeam = asyncHandler(async (req, res, next) => {
-    const team = await Team.findByIdAndUpdate(req.params.id, req.body, {
-        new: true, // return updated data,
-        runValidators: true
-    })
+    let team = await Team.findById(req.params.id);
 
     if(!team) {
         return next(new ErrorResponse(`Team not found with id of ${req.params.id}`, 404));
     }
+
+    if(team.user.toString() !== req.user.id && req.user.role !== 'admin') {
+        return next (new ErrorResponse(`User ${req.user.id} is not authorized to update this team`), 401);
+    }
+
+    // Make sure user is team owner or it's the admin
+    team = await Team.findOneAndUpdate(req.params.id, req.body, {
+        new: true, // return updated data,
+        runValidators: true
+    });
+
 
     res.status(200).json({ 
         success: true, 
@@ -65,6 +76,10 @@ exports.deleteTeam = asyncHandler(async (req, res, next) => {
 
     if(!team) {
         return next(new ErrorResponse(`Team not found with id of ${req.params.id}`, 404));
+    }
+
+    if(team.user.toString() !== req.user.id && req.user.role !== 'admin') {
+        return next (new ErrorResponse(`User ${req.user.id} is not authorized to delete this team`), 401);
     }
 
     team.remove();
@@ -83,6 +98,10 @@ exports.teamPhotoUpload = asyncHandler(async (req, res, next) => {
 
     if(!team) {
         return next(new ErrorResponse(`Team not found with id of ${req.params.id}`, 404));
+    }
+
+    if(team.user.toString() !== req.user.id && req.user.role !== 'admin') {
+        return next (new ErrorResponse(`User ${req.user.id} is not authorized to update this team`), 401);
     }
 
     if (!req.files) {

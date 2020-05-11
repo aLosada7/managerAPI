@@ -40,16 +40,22 @@ exports.getPlayer = asyncHandler(async (req, res, next) => {
     })
 });
 
-// @desc Add a players
+// @desc Add a player
 // @route POST /api/v1/teams/:teamId/players
 // @access Private
 exports.addPlayer = asyncHandler(async (req, res, next) => {
+    console.log("aqui")
     req.body.team = req.params.teamId;
+    req.body.user = req.user.id;
 
     const team = await Team.findById(req.params.teamId);
 
     if(!team) {
         return next(new ErrorResponse(`No team with the id of ${req.params.teamId}`), 404);
+    }
+
+    if(team.user.toString() !== req.user.id && req.user.role !== 'admin') {
+        return next(new ErrorResponse(`User ${req.user.id} is not authorized to add a player to team ${req.params.teamId}`, 401));
     }
 
     const player = await Player.create(req.body);
