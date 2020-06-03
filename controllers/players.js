@@ -2,6 +2,9 @@ const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 const Player = require('../models/Player');
 const Team = require('../models/Team');
+const GeneratePlayersService = require('../utils/generatePlayers');  
+
+const PlayerRepository = require('../repositories/player').PlayerRepository;
 
 // @desc Get players
 // @route GET /api/v1/players
@@ -9,7 +12,7 @@ const Team = require('../models/Team');
 // @access Public
 exports.getPlayers = asyncHandler(async (req, res, next) => {
     if (req.params.teamId) {
-        const players = await Player.find({ team: req.params.teamId });
+        const players = await PlayerRepository.findTeamPlayers(req.params.teamId);
 
         return res.status(200).json({
             success: true,
@@ -27,7 +30,7 @@ exports.getPlayers = asyncHandler(async (req, res, next) => {
 exports.getPlayer = asyncHandler(async (req, res, next) => {
     const player = await Player.findById(req.params.id).populate({
         path: 'team',
-        select: 'name description'
+        select: 'name'
     });
 
     if(!player) {
@@ -103,4 +106,17 @@ exports.deletePlayer = asyncHandler(async (req, res, next) => {
         success: true,
         data: {}
     })
+});
+
+// @desc Get new players
+// @route GET /api/v1/newplayers
+// @route GET /api/v1/players/newplayers
+// @access Public
+exports.getNewPlayers = asyncHandler(async (req, res, next) => {
+    const players = await GeneratePlayersService.generatePlayers();
+
+    res.status(200).json({
+        success: true,
+        data: players
+    });
 });

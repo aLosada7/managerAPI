@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+var cors = require('cors');
 const colors = require('colors');
 const fileupload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
@@ -19,11 +20,15 @@ const teams = require('./routes/teams');
 const players = require('./routes/players');
 const auth = require('./routes/auth');
 const users = require('./routes/users');
+const competitions = require('./routes/competitions');
+const report = require('./routes/report');
+const games = require('./routes/games');
 
 const app = express();
 
 // Body parser
 app.use(express.json());
+app.use(cors());
 
 // Cookie parser
 app.use(cookieParser());
@@ -45,6 +50,9 @@ app.use('/api/v1/teams', teams);
 app.use('/api/v1/players', players);
 app.use('/api/v1/auth', auth);
 app.use('/api/v1/users', users);
+app.use('/api/v1/competitions', competitions);
+app.use('/api/v1/report', report);
+app.use('/api/v1/games', games);
 
 // Error Handler
 app.use(errorHandler);

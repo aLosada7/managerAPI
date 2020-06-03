@@ -1,0 +1,30 @@
+[
+	{
+		"_id": "5d725c84c4ded7bcb480eab9",
+		"name": "Spain 1",
+		"teams": [],
+		"thropyName": "Spanish League 1 Trophy",
+		"thropyValue": 10000000
+    },
+    {
+		"_id": "5d725c84c4ded7bcb480eac8",
+		"name": "Spain 2",
+		"teams": [],
+		"thropyName": "Spanish League 2 Trophy",
+		"thropyValue": 7500000
+    },
+    {
+		"_id": "5d725c84c4ded7bcb480eae9",
+		"name": "Spain 3",
+		"teams": [],
+		"thropyName": "Spanish League 3 Trophy",
+		"thropyValue": 4000000
+    },
+    {
+		"_id": "5d725c84c4ded7bcb480eaf3",
+		"name": "Euroleague",
+		"teams": [],
+		"thropyName": "Euroleague Trophy",
+		"thropyValue": 20000000
+    }
+]

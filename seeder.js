@@ -10,6 +10,8 @@ dotenv.config({ path: './config/config.env' });
 const Team = require('./models/Team');
 const Player = require('./models/Player');
 const User = require('./models/User');
+const Competition = require('./models/Competition');
+const Game = require('./models/Game');
 
 // Connect to DB
 mongoose.connect( process.env.MONGO_URI, {
@@ -29,13 +31,17 @@ const players = JSON.parse(
 const users = JSON.parse(
     fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8')
 );
+const competitions = JSON.parse(
+    fs.readFileSync(`${__dirname}/_data/competitions.json`, 'utf-8')
+);
 
 // Import into DB
 const importData = async () => {
     try {
-        await Team.create(teams);
-        await Player.create(players);
+        //await Team.create(teams);
+        //await Player.create(players);
         await User.create(users);
+        await Competition.create(competitions);
 
         console.log('Data Imported...'.green.inverse);
         process.exit();
@@ -50,6 +56,8 @@ const deleteData = async () => {
         await Team.deleteMany();
         await Player.deleteMany();
         await User.deleteMany();
+        await Competition.deleteMany();
+        await Game.deleteMany();
 
         console.log('Data Destroyed...'.red.inverse);
         process.exit();

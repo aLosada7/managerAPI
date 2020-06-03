@@ -5,8 +5,16 @@
 		"average": 31,
 		"age": 24,
 		"price": 8000000,
+		"country": "United Kingdom",
 		"number": 0,
-		"position": "PG",
+		"position": "Guard",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d713995b721c3bb38c1f5d0",
 		"user": "5d7a514b5d2c12c7449be045"
 	},
@@ -16,8 +24,16 @@
 		"average": 87,
 		"age": 29,
 		"price": 8000000,
+		"country": "United Kingdom",
 		"number": 14,
-		"position": "PG",
+		"position": "Guard",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d713995b721c3bb38c1f5d0",
 		"user": "5d7a514b5d2c12c7449be045"
 	},
@@ -28,7 +44,15 @@
 		"age": 27,
 		"price": 8000000,
 		"number": 6,
-		"position": "PG",
+		"country": "United Kingdom",
+		"position": "Guard",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d713a66ec8f2b88b8f830b8",
 		"user": "5d7a514b5d2c12c7449be046"
 	},
@@ -38,8 +62,16 @@
 		"average": 87,
 		"age": 32,
 		"price": 6878985,
+		"country": "United Kingdom",
 		"number": 19,
-		"position": "PF",
+		"position": "Forward",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d713a66ec8f2b88b8f830b8",
 		"user": "5d7a514b5d2c12c7449be046"
 	},
@@ -49,8 +81,16 @@
 		"average": 77,
 		"age": 24,
 		"price": 5874879,
+		"country": "United Kingdom",
 		"number": 24,
-		"position": "C",
+		"position": "Forward",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d725a037b292f5f8ceff787",
 		"user": "5c8a1d5b0190b214360dc031"
 	},
@@ -60,8 +100,16 @@
 		"average": 72,
 		"age": 24,
 		"price": 4000000,
+		"country": "United Kingdom",
 		"number": 63,
-		"position": "PG",
+		"position": "Forward",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d725a037b292f5f8ceff787",
 		"user": "5c8a1d5b0190b214360dc031"
 	},
@@ -71,8 +119,16 @@
 		"average": 83,
 		"age": 24,
 		"price": 8000000,
+		"country": "United Kingdom",
 		"number": 16,
-		"position": "PG",
+		"position": "Center",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d725a1b7b292f5f8ceff788",
 		"user": "5c8a1d5b0190b214360dc032"
 	},
@@ -82,8 +138,16 @@
 		"average": 81,
 		"age": 24,
 		"price": 8000000,
+		"country": "United Kingdom",
 		"number": 12,
-		"position": "SG",
+		"position": "Center",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d725a1b7b292f5f8ceff788",
 		"user": "5c8a1d5b0190b214360dc032"
 	},
@@ -93,8 +157,16 @@
 		"average": 89,
 		"age": 21,
 		"price": 10000989,
+		"country": "United Kingdom",
 		"number": 5,
-		"position": "PG",
+		"position": "Center",
+		"attributes": {
+			"pass": 90,
+			"twopoints": 80,
+			"threepoints": 70,
+			"deffense": 60,
+			"rebound": 60
+		},
 		"team": "5d725a1b7b292f5f8ceff788",
 		"user": "5c8a1d5b0190b214360dc032"
 	}

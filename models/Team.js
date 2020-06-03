@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const countries = require('./Country');
 
 const TeamSchema = new mongoose.Schema({
     name: {
@@ -17,7 +18,7 @@ const TeamSchema = new mongoose.Schema({
     country: {
         type: String,
         required: true,
-        enum: ['Spain', 'Italy', 'France', 'Germany']
+        enum: countries
     },
     competition: {
         // Array of strings

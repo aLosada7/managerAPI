@@ -4,7 +4,8 @@ const {
     getPlayer,
     addPlayer,
     updatePlayer,
-    deletePlayer
+    deletePlayer,
+    getNewPlayers
 } = require('../controllers/players');
 
 const Player = require('../models/Player');
@@ -20,6 +21,9 @@ router.route('/')
         select: 'name position'
     }), getPlayers)
     .post(protect, authorize('user', 'admin'), addPlayer);
+
+router.route('/newplayers')
+    .get(getNewPlayers)
 
 router.route('/:id')
     .get(getPlayer)

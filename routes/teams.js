@@ -10,7 +10,6 @@ const {
 
 const Team = require('../models/Team');
 
-
 const advancedResults = require('../middleware/advancedResults');
 
 const router = express.Router();
@@ -19,9 +18,11 @@ const { protect, authorize } = require('../middleware/auth');
 
 // Include other resource routers
 const playerRouter = require('./players');
+const gameRouter = require('./games');
 
 // Re-route into other resource routers
 router.use('/:teamId/players', playerRouter);
+router.use('/:teamId/games', gameRouter);
 
 router
     .route('/:id/photo')

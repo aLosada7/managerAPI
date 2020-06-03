@@ -1,7 +1,9 @@
 const path = require('path');
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
+
 const Team = require('../models/Team');
+const Game = require('../models/Game');
 
 // @desc Get all teams
 // @route GET /api/v1/teams
@@ -11,7 +13,7 @@ exports.getTeams = asyncHandler(async (req, res, next) => {
 });
 
 // @desc Get a single team
-// @route GET /api/v1/team/:id
+// @route GET /api/v1/teams/:id
 // @access Public
 exports.getTeam = asyncHandler(async (req, res, next) => {
     const team = await Team.findById(req.params.id);

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const countries = require('./Country');
 
 const PlayerSchema = new mongoose.Schema({
     name: {
@@ -25,11 +26,20 @@ const PlayerSchema = new mongoose.Schema({
     position: {
         type: String,
         required: [true, 'Please add a player position'],
-        enum: ['PG', 'PF', 'SG', 'SF', 'C']
+        enum: ['Guard', 'Forward', 'Center']
+    },
+    country: {
+        type: String,
+        required: true,
+        enum: countries
+    },
+    attributes: {
+        type: {},
+        required: [true, 'Please add player attributes']
     },
     createdAt: {
         type: Date,
-        defailt: Date.now
+        default: Date.now
     },
     team: {
         type: mongoose.Schema.ObjectId,
