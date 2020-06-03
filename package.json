@@ -5,11 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "client": "react-scripts start",
     "server": "nodemon server",
-    "eject": "react-scripts eject",
     "dev": "nodemon server",
     "heroku-postbuild": "npm run build"
   },
